@@ -6,11 +6,10 @@ using System.Text;
 
 namespace CarDealer.DataAccess
 {
-    internal class CarDealerDbContext : DbContext
+    public class CarDealerDbContext : DbContext
     {
         public DbSet<Car> Cars { get; set; }
-        public DbSet<Owner> Owners { get; set; }
-        public DbSet<Insurance> Insurances { get; set; }
+        public DbSet<TechnicalPassport> TechnicalPassports { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

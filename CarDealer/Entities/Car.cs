@@ -5,8 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Text;
 
 namespace CarDealer.Entities
-{   
-    [Index(nameof(BanCode), IsUnique = true)]
+{       
     [Index(nameof(PlateNumber), IsUnique = true)]
     public class Car
     {
@@ -23,20 +22,15 @@ namespace CarDealer.Entities
         [Range(1900,2026)]
         public int ProductionYear { get; set; }
 
-        [Required]
-        [MaxLength(7)]
-        public string? PlateNumber { get; set; }
+        public double EngineLitr { get; set; }
 
         [Required]
-        [MaxLength(16)]
-        public string? BanCode { get; set; }
+        [MaxLength(7)]
+        public string? PlateNumber { get; set; }        
 
         public decimal Price { get; set; }
 
-        public int? OwnerId { get; set; }
-        public virtual Owner? Owner { get; set; }
-
-        public ICollection<Insurance> Insurances { get; set; } = new List<Insurance>();
+        public TechnicalPassport? TechnicalPassport { get; set; }
 
     }
 }
